@@ -1,0 +1,88 @@
+<div class="project-header">
+    <img src="images/RE2Project.gif" alt="Bug Shooter" class="hero-image" />
+    <div class="flex-left">
+        <h1>Slot Based Inventory System (Prototype)</h1>
+        <p><strong>Role:</strong> Gameplay & UI Programmer</p>
+        <p><strong>Tools:</strong> C++, Unreal Engine</p>
+    </div>
+    <div class="flex-right"><iframe width="560" height="315" src="https://www.youtube.com/embed/-DWWs9z4EFU?si=TOg6AzaDGfLEtJzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+
+      <section class="intro">
+        <h2>Introduction</h2>
+        <p>
+        This project started as a challenge to myself, as during my Masters Degree I had learnt the C++ programming language, I wanted to intergate my C++ skillset
+        into the Unreal Engine. As an avid fan of Survival Horror games and espcially Resident Evil 2. I wanted to recreate the inventory system from scrath using C++ and 
+        blueprints for Widgets (User Interface).
+        
+        Its purpose was not to create a beautiful user interface, but to recreate all the logic required.
+        </p>
+      </section>
+
+      <section class="sysfunc">
+        <h2>System Functionality</h2>
+        <p>
+            The functionality of this system is as follows:
+            <ul>
+                <li>Adding Items</li>
+                <li>Removing Items (Except Key Items)</li>
+                <li>Using Items</li>
+                <li>Examining Items</li>
+                <li>Attaching equipable items to the player</li>
+                <li>Storing and retrieving items from an item box</li>
+                <li>Item stack data for reloading</li>
+                <li>Combining Ingredients</li>
+            </ul>           
+
+        </p>
+      </section>
+
+      <section class="reflection">
+        <h2>Reflection</h2>
+        <div class="ref-content">  
+             Looking back at this project (created in 2020), this was my first genuine attempt at utilising C++ outside my studies for my Master's Degree.
+            Upon reflection, many things could have improved this system overall.
+            For starters, the logic for the inventory system is primarily written inside the player character .cpp file. Implementing my program this way made for a bloated and inefficient system.
+            To rectify this, I would create a new class that is only used for the logic of the inventory system; This would, for one, remove the bloated player class,
+            two, this would modularise and aid in the debugging process. </br>
+
+        </div>
+
+        <div class="ref-image">
+            Then, using either a singleton method or simply storing the class as a member variable inside the player character, they can still access all its contents without needing to write any
+            additional functionality within its class. </br><br>
+                
+            Furthermore, there are some issues with the overall code structure for looking for items. Evidence of this can be seen in the GetAmmoInInventory function, 
+            as there are two for loops inside this single function. 
+            To rectify this, I could have restructured and rewritten this to a single loop or return call to avoid excessive memory usage for a single function call. <br><br>
+
+            Moreover, there was a lack of interfaces utilised within the codebase. The evidence of a missing interface was apparent within the switch case for using an item; 
+            during the development of the prototype, this wasn't an issue. However, for scalability and maintainability, 
+            this is not an ideal solution as the more items added to this system would require constantly
+            adding to the switch case, whereas adding an interface call to that specific used item would increase code readability and make it more modular. <br>
+
+        </div>    
+
+        <div class ="image">    
+            <img src="images/RE2CodeExample.png" alt="GetAmmoInInventory function" />
+        </div>
+
+
+        <h3>Lessons learnt</h3>
+           <p>
+            From this project, I have learned the importance of planning the overall data structure and class structure for creating object-oriented
+            programs. Additionally, the usage of Vectors and for loops for correct iterations in C++ with my bespoke system. Regarding the overall
+            implementation, I put into practice a top-down approach to problem solving to dissect the core program I was trying to solve and all 
+            the required elements needed to complete this system. Whilst this is one of my oldest projects to date, and there are various issues
+            that I have with the code structure, I would still consider it a great learning experience, and the project was able to meet the requirements that I 
+            had set out for myself.
+
+           </p>
+
+      </section>
+      
+ 
+
+      <p style="margin-top:1rem;"><a href="https://github.com/CoreyVM/SlotBasedInventory" target="_blank">View Code on GitHub →</a></p>
+    

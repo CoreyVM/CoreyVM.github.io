@@ -1,0 +1,124 @@
+<div class="project-header">
+    <img src="images/MotivaitImage.png" alt="Motivait Image" class="hero-image" />
+    <div class="flex-left">
+        <h1>Motivait Escape Room (Disseration Project)</h1>
+        <p><strong>Role:</strong> Gameplay & UI Programmer</p>
+        <p><strong>Tools:</strong> C#, Unity, Photoshop, Audacity</p>
+    </div>
+    <div class="flex-right">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3B5h4monQc?si=GaN8NHpHhbP1zEH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+</div>
+
+      <section class="intro">
+        <h2>Introduction</h2>
+        <p>
+        As part of my dissertation for my Master's Degree, I worked for a company called Motivait, 
+        which tasked me with creating an escape room-style game to teach new employees about the office and the themes and strengths of the company. 
+        The project was developed using the Unity Game Engine with C# as the programming language. 
+        All assets were created by myself; however, if any additional assets were required, such as posters or key information, 
+        this was all provided by the representative of the company I was working with.
+
+        </p>
+      </section>
+
+      <section class="sysfunc">
+        <h2>System Functionality</h2>
+        <p>
+           So, as this was an escape room-style game, I was tasked with creating various challenges for the player to solve, 
+           whilst also naturally taking in the company's mission and values. We decided that the game's end goal was to get a passcode to unlock the front 
+           entrance, but the player would have to find the correct four numbers that can only be seen by interacting with the environment or people.
+           There were a few challenges that needed to be completed regarding the programming and overall game design, 
+           for the player to access the numbers they had to complete or interact with the following:
+
+            <ul>
+                <li>Turning on the WiFi (Wire Puzzle)</li>
+                <li>Turning On the Projector</li>
+                <li>Fixing the printer</li>
+                <li>Read and rotate the printed poster</li>
+                <li>Input the passcode into the front door panel</li>
+            </ul>       
+            
+            Unity uses the ECS (Entity Component System), so all code must be modular and reusable. 
+            To create this, I made an Interactable Interface, which was solely responsible for activating and sending the 
+            appropriate message calls to the line-traced object.
+            This interface trivialised the creation process of custom scripts for certain aspects of the game. For example, 
+            talking to the NPCs when dialogue is needed, opening and closing cupboards and drawers.<br>
+            
+            Regarding the visuals, I decided to utilise a simple cell shader to boost the colours and visuals of the product; one of the requirements
+            was that this game could run on most machines and the web. So to accomplish this i decided to make as little GetComponent and Update calls 
+            for the CPU.<br><br>
+            Then, for the GPU, only low-polygon models and limited lighting were used to reduce the amount of draw calls. 
+            Then, marking objects that don't move as static
+            to aid in the occlusion culling process. Then lastly, for terrain that was outside, it was pointless to render entire buildings, so I decided
+            to remove the faces from the back as if they were never going to be seen by the player, then we could save the VRAM from loading redundant vertices and polygons.
+
+
+        </p>
+      </section>
+
+      <section class="reflection">
+        <h2>Reflection</h2>
+        <div class="ref-content">  
+        Upon reflection, I believe many things went well with the project and many areas in which I could have improved.
+        For starters taking in the lessons learnt from my inventroy system, I made sure to utilise a scalable and modular 
+        apporach to building all functinality within the game.<br>
+        However, as this project was under a strict timeframe per my final module during my Masters. This can be seen with the overall visuals and 
+        final implemetatnion of assets. <br><br>
+
+        For the user interface this was an area that upon retrospection was not handled to my standard of good practise, as for starters
+        the scale and positions of UI elemetns were not scaled correctly to all devices. Moreover, the overall resolution of the textures
+        could have been upscaled or remade to better suit the visuals and increase clarity on the final product.
+
+        Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
+        to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
+
+
+       
+        </div>
+
+        <div class="ref-image">
+        Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
+        to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
+        At first, I tinkered with a small algorithm that would detect the correct sequence of positions and light all of the appropriate switches
+        and turn off the inactive switches. However, there were complications with scope creep and the various potential calculations that needed to be processed
+        for every possible solution made by the player. <br><br>
+        
+        To fix this, I decided to hardcode the solution into the script and used a simple for loop to detect what switches are active and 
+        if they correspond to the actual solution to the puzzle. By choosing this implemtatino this simplified the process and made it so much more memory efficent, there were plans
+        to make the puzzle randomised with each playthwoght but for time limitation I decided to keep this original solution for all playthroughs.<br><br>
+
+        </div>    
+
+        <div class ="image">    
+            <img src="images/WirePuzzle.png" alt="Wire Puzzle" />
+        </div>
+        
+        <div class ="secondimage">    
+            <img src="images/OutlineShader.png" alt="Outline Shader" />
+        </div>
+        
+        <div class="ref-image2">
+         To better aid the player in distinguishing what is interactable within the game world, I created a simple outline shader that would
+        highlight specific objects in the world at a distance to be interacted with via a key press. 
+        Whilst the shader worked, there 
+        were some issues with the outline not completely lining up with specific geometry at certain angles.
+
+        </div>    
+
+
+        <div>
+
+        <h3>Lessons Learnt</h3>
+           <p>
+           Upon completing this project, I took many lessons on creating, testing, and completing projects on time. The final product was produced without delays and met the end criteria the client sought. Based on my critique, there are areas which I know
+            if I had more time I could have improved.<br>
+            For starters, the UX & UI design of the product. For the UX, it was unclear what exactly the player needed to do and how. For example, what are controls, what is the objective, and how can I track progress?<br>
+            <br>
+            For the user interface, I was happy with grabbing the player's input for the in-game keyboard and fake Windows PCs. However, as seen in the demo build,
+            the scaling is wrong for some textures applied to the monitor. I could have recreated these assets in Photoshop and used Unity's Anchor system to 
+            automatically scale to the viewport and resolution of the user's screens while playing the game.
+
+
+           </p>
+        </div>
+      </section>
