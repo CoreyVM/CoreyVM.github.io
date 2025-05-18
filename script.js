@@ -1,19 +1,30 @@
 const projects = [
+   { //Persona Project
+    title: "Turn Based Combat Prototype (Persona Recreation)",
+    role: "Gameplay/UI Programmer",
+    image: "images/persona.gif",
+    description: "This project aimed to recreate the Combat system utilised by ATLAS in the Persona series of games. Choosing this project was done to pose a challenge to myself, as, without access to their source code, I would have to create my implementation from scratch.",
+    detailPath: "Projects/PersonaProject.html",
+    stylesPath: "styles/style.css"
+   },
 
-   { //Motivait Master Work Project
+
+   { //Motivait Project
     title: "Motivait Escape Room (Disseration Project)",
     role: "Gameplay/UI Programmer",
     image: "images/MotivaitImage.png",
-    description: "A final project where i created a small escape room inspirated game for new members of staff to use to get affeliated with the company and office enviornment.",
-    detailPath: "Projects/MotivaitProject.html"
+    description: "A final project where I created a small escape room-inspired game for new staff members to get acquainted with the company and office environment.",
+    detailPath: "Projects/MotivaitProject.html",
+    stylesPath: "styles/style.css"
    },
 
    { //Resident Evil 2 Project
     title: "Slot Based Inventory System",
     role: "Gameplay/UI Programmer",
     image: "images/RE2Project.gif",
-    description: 'This project was to create a custom made inventory system using Unreal Engine and C++, inspired by Resident Evil and other survival horror games.',
-    detailPath: "Projects/RE2Project.html"
+    description: 'This project was to create a custom inventory system using Unreal Engine and C++, inspired by Resident Evil and other survival horror games.',
+    detailPath: "Projects/RE2Project.html",
+    stylesPath: "styles/RE2Style.css"
   }
 ];
 
@@ -27,6 +38,19 @@ function showDetail(project) {
   projectList.style.display = "none";
   detailSection.style.display = "block";
   detailContent.innerHTML = "<p>Loading...</p>";
+
+  // Remove any previously added project-specific styles
+  const existing = document.getElementById("dynamic-style");
+  if (existing) existing.remove();
+
+  if (project.stylePath) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = project.stylePath;
+    link.id = "dynamic-style";
+    document.head.appendChild(link);
+  }
+
 
   if (project.detailPath) {
     fetch(project.detailPath)
