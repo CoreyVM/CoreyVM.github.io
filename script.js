@@ -1,4 +1,14 @@
 const projects = [
+  { 
+    //Wave Based Shooter Project
+    title: "Wave Based FPS Shooter ",
+    role: "Gameplay, UI, AI, Systems, Animation",
+    image: "images/AISpawner.gif",
+    description: 'Custom made course for teaching Level 3 Game Development students how to develop and create 3D games utuilsing industry practise for programming. ',
+    detailPath: "Projects/WaveBasedShooter.html",
+    stylesPath: "styles/style.css"
+  },
+  
    { //Persona Project
     title: "Turn Based Combat Prototype (Persona Recreation)",
     role: "Gameplay/UI Programmer",
@@ -24,7 +34,7 @@ const projects = [
     image: "images/RE2Project.gif",
     description: 'This project was to create a custom inventory system using Unreal Engine and C++, inspired by Resident Evil and other survival horror games.',
     detailPath: "Projects/RE2Project.html",
-    stylesPath: "styles/RE2Style.css"
+    stylesPath: "styles/style.css"
   }
 ];
 
@@ -96,7 +106,7 @@ projects.forEach(project => {
       <h3 class="project-title">${project.title}</h3>
       <p class="project-role">${project.role}</p>
       <p class="project-description">${project.description}</p>
-      <button class="project-link">View Project →</button>
+      <button class="project-link">View Project</button>
     </div>
   `;
 

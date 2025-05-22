@@ -71,12 +71,11 @@
 
         Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
         to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
-
-
-       
         </div>
 
-        <div class="ref-image">
+
+        <div class="ref-container">
+        <div class="ref-content">
         Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
         to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
         At first, I tinkered with a small algorithm that would detect the correct sequence of positions and light all of the appropriate switches
@@ -86,27 +85,31 @@
         To fix this, I decided to hardcode the solution into the script and used a simple for loop to detect what switches are active and 
         if they correspond to the actual solution to the puzzle. By choosing this implemtatino this simplified the process and made it so much more memory efficent, there were plans
         to make the puzzle randomised with each playthwoght but for time limitation I decided to keep this original solution for all playthroughs.<br><br>
-
         </div>    
 
-        <div class ="image">    
+        <div class ="ref-image">    
             <img src="images/WirePuzzle.png" alt="Wire Puzzle" />
         </div>
-        
-        <div class ="secondimage">    
-            <img src="images/OutlineShader.png" alt="Outline Shader" />
         </div>
+      
+
+        <div class="ref-container"> 
+          <div class ="ref-image-2">    
+            <img src="images/OutlineShader.png" alt="Outline Shader" />
+          </div>
         
-        <div class="ref-image2">
+        <div class="ref-description">
          To better aid the player in distinguishing what is interactable within the game world, I created a simple outline shader that would
         highlight specific objects in the world at a distance to be interacted with via a key press. 
         Whilst the shader worked, there 
         were some issues with the outline not completely lining up with specific geometry at certain angles.
+          </div>    
+        </div>
+      </div>
 
-        </div>    
-
-
-        <div>
+        
+    </section>
+      <section> 
 
         <h3>Lessons Learnt</h3>
            <p>

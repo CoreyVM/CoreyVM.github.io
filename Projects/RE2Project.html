@@ -46,10 +46,12 @@
             For starters, the logic for the inventory system is primarily written inside the player character .cpp file. Implementing my program this way made for a bloated and inefficient system.
             To rectify this, I would create a new class that is only used for the logic of the inventory system; This would, for one, remove the bloated player class,
             two, this would modularise and aid in the debugging process. </br>
-
         </div>
 
-        <div class="ref-image">
+
+
+        <div class="ref-container">
+        <div class="ref-description">
             Then, using either a singleton method or simply storing the class as a member variable inside the player character, they can still access all its contents without needing to write any
             additional functionality within its class. </br><br>
                 
@@ -64,8 +66,9 @@
 
         </div>    
 
-        <div class ="image">    
+        <div class ="ref-image">    
             <img src="images/RE2CodeExample.png" alt="GetAmmoInInventory function" />
+        </div>
         </div>
 
 

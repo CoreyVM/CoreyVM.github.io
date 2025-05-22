@@ -18,6 +18,7 @@
 
       <section class="sysfunc">
         <h2>System Functionality</h2>
+        <div class="sys-description">
         <p>
             The functinality of this sytem is as follows:
             <ul>
@@ -28,20 +29,30 @@
                 <li>Updating turn order based on striking entity weaknesses</li>
             </ul>           
         </p>
+        </div>
+
+
+       <div class="sysfunc-container">
 
          <div class="sysfunc-description">
             For the combat system the player has access to attacking with their melee weapon, guarding (reducing incoming damage), and lastly using items from 
             the players inventory. <br>
             Based on each choice the player HUD will autmoatically change to represent what actions were possible. For example, when the 'Attack' button is processed
             the UI will render all possible targets the player unit can attack. To better represent the target you are aiming for, 
-            the camera automatically moves to the highlighted character.
-
-            <div class ="sysfunc-image">    
-            <img src="images/combatimage.png" alt="GetAmmoInInventory function" />
-            </div>
+            the camera automatically moves to the highlighted character.        
         </div>    
 
+            <div class ="sysfunc-image-2">    
+            <img src="images/combatimage.png" alt="GetAmmoInInventory function" />
+            </div>
 
+        </div>
+
+
+          <div class="sysfunc-container">
+              <div class ="sysfunc-image">    
+                  <img src="images/PersonaMagicUI.png" alt="GetAmmoInInventory function" />
+              </div>
          <div class="sysfunc-description">
             One of the biggest challenge that i knew I had to face was creating the magic spell system. So the way
             most traditonal turn based RPGs operate is by having each party member having their own skills and attributes
@@ -54,12 +65,11 @@
             With all of this information loaded into the entities memory each turn I could then update the UI to quick reload
             only showing the spells that the specific character can use.
          </div>
-        <div class ="sysfunc-image">    
-            <img src="images/PersonaMagicUI.png" alt="GetAmmoInInventory function" />
-        </div>
-
+    </div>
+   
 
         <!--Weakness Section -->
+        <div class="sysfunc-container">
         <div class="sysfunc-description">
             As stated before inside of the master class all of the attributes for all possible combat particitpants are created.
             So to replicate Personas combat system I had to incpoprate the Weakness Vunerability system. This features works as follows, if you attack
@@ -71,8 +81,9 @@
             So in my my system you can only strike the enemy combatants once per turn, this is where the strategy comes from since you can still exploit
             other NPCs weaknesses but your character must have a spell that can exploit the accompnuing NPC.
          </div>
-        <div class ="sysfunc-image">    
+        <div class ="sysfunc-image-2">    
             <img src="images/weakness.gif" alt="GetAmmoInInventory function" />
+        </div>
         </div>
       </section>
 
