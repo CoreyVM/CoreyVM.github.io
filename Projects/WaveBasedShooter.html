@@ -5,26 +5,24 @@
         <p><strong>Role:</strong> Gameplay/UI Programmer, AI Programmer, Game Tester,Animation Programmer, Technical Artist </p>
         <p><strong>Tools:</strong> Unreal Engine, Niagara, Audacity, Adobe Photoshop</p>
     </div>
-
-
       <section class="intro">
         <h2>Introduction</h2>
         <p>
-        As part of my teaching curriculum with my proffession as an Advanced Technical Lecturer I had the luxury of delivering a bespoke
-        course for my students studying game development. For my learners I wanted to give them lessons that would enable them to take the skills
-        learnt from my sessions and apply these into their own projects regardless of genre or game engine.<br><br>
+        As part of my teaching curriculum with my profession as an Advanced Technical Lecturer, I had the luxury of delivering a bespoke
+        course for my students studying game development. For my learners, I wanted to give them lessons that would enable them to take the skills
+        learnt from my sessions and apply these to their own projects, regardless of genre or game engine.<br><br>
+        With this in mind, I decided to produce a 10+ week course where the learners will build a First Person Wave-Based Shooter Game from scratch. On this course,
+        the learners were shown and taught how to design and create the appropriate systems required to develop their games. For example, how a weapon system
+        is designed and created using OOP principles for code reusability and modularity. Moreover, they were introduced to
 
-        With this in mind I decided to produce a 10+ week course where the learners will build a First Person Wave Based Shooter Game from scratch. On this course
-        the learners were shown and taught how to design and create the appropirate systems required to develop their games. For example, how a weapon system
-        is designed and created using OOP principles for code reusuablity and modulartity. Moreover, they were introuced to 
         
         <ul>
           <li>Gameplay Systems</li>
-          <li>Artifical Intelligence</li>
+          <li>Artificial Intelligence</li>
           <li>User Interface & UX</li>
           <li>Skeletal Animation Programming</li>
           <li>Inverse Kinematics</li>
-          <li>Shaders & PArticle Systems</li>
+          <li>Shaders & Particle Systems</li>
           <li>Post Processing</li>
           <li>Audio Systems</li>
         <ul>
@@ -34,76 +32,53 @@
       <section class="sysfunc">
         <h2>System Functionality</h2>
         <p>
-          
+           For this course I delivered, the end goal was to create a working first-person shooter project
+           that works very similarly to that of Treyarch Call Of Duty Zombies mode, where infinite 
+           waves of spawning artificial intelligence will chase and attack the player, and you have 
+           to survive for as long as possible.
 
-
-           For this course I delivered, the end goal was to create a working First Person Shooter project
-           that works very similialry to that of Treyarch Call Of Duty Zombies mode, where infinite 
-           waves of spawning artiticla intelligence will chase and attack the player and you have 
-           to surivive for as long as possible.
-
-          For this game project I was delivering I broke down the course into these section until the learners were able 
-          to build a fully functional protoype. These were:
+          For this game project, I broke down the course into these sections until the learners were able 
+          to build a fully functional prototype. These were:
             <ul>
                 <li>Creating the Gun Super Class</li>
                 <li>Creating virtual functions for Gun class</li>
-                <li>Importing and configriung Skeletal Meshes </li>
-                <li>Bone Socketing For Weapon Attach System</li>
-                <li>Finite & Behaviour Tree Artifical Intelligence</li>
+                <li>Importing and configuring Skeletal Meshes </li>
+                <li>Bone Socketing for Weapon Attach System</li>
+                <li>Finite & Behaviour Tree Artificial Intelligence</li>
                 <li>Dynamic Zone AI Spawning System</li>
             </ul>       
         </p>
-
-
-
-        For the spawning of artifical intellgence instead of utilsing a random spawn location in range system. Instead I 
-        took insipiration from Call of Duty & Killing Floor for how their artifical intelligence is spawned within the world.
-        From my obersvations I conclude that these games may use a zone based system for determining what active zones the player is currently
-        standing in.<br><br>
-        
+        For the spawning of artificial intelligence, instead of utilising a random spawn location in the range system. Instead, I 
+        took inspiration from Call of Duty & Killing Floor for how their artificial intelligence is spawned within the world.
+        From my observations, 
+        I concluded that these games may use a zone-based system for determining what active zones the player is currently standing in.<br><br>
           <div class="sysfunc-container">
             <div class="sysfunc-description">
               <h4>Zone Based Spawning System</h4>
-              The zone based system i devised works by having hidden colliders within a 3D enviornment with each collider there are 
-          spawner point actor in an array located on the colliders class. Once the player steps into these zones then my 
-          game mode will determine which spawning points are currently 'active' then using random number generation
-          the spawning system will choose of the active locations to make a dynamic system. <br><br>
+          The zone-based system I devised works by having hidden colliders within a 3D environment, with each collider there are 
+          spawner point actor in an array located in the colliders class. Once the player steps into these zones, then my 
+          game mode will determine which spawning points are currently 'active', then using random number generation
+          the spawning system will choose from one of the active locations to make a dynamic spawn system. <br><br>
 
-          To teach my learners about performance this spawning system has restriction in place, these retriscrtion
-          are that the AI cannot spawn past that max quaintiy by a variable limit. This ensures that there will 
-          not be to many calls on the CPU and GPU with extensive amounts of usage and calls.<br><br>
-
+          To teach my learners about performance, this spawning system has restrictions in place, these restrictions
+          are that the AI cannot spawn past that max quantity by a variable limit. This ensures that there will 
+          not be too many calls on the CPU and GPU with extensive amounts of usage and calls.<br><br>
         </div>    
-
             <div class ="sysfunc-image">    
-            <img src="images/AiSpawner.gif" alt="GetAmmoInInventory function" />
+            <img src="images/AISpawner.gif" alt="Zone Based Spawner Example Gif" />
             </div>
         </div>
-
-
           <div class="sysfunc-container">
             <div class ="sysfunc-image-2">    
             <img src="images/IKpreview.gif" alt="Inverse Kinematic Preview" />
             </div>
          <div class="sysfunc-description">
           <h4>Inverse Kinematics System</h4>
-          For the weapon system in order to save on development time, instead of creating additonal animations per weapon. For this 
-          I devised an Inverse Kinematics system so that the left hand bone of the players skeletal mesh would be attacthed to a custom
-          bone socket per weapon skeleton. As seen in the preview by simply moving the position of said bone in the weapon skeleton this will dynamically
-          adjust the skeltal mesh to better snap and position for each weapon animation set.
+          For the weapon system to save on development time, instead of creating additional animations per weapon. For this 
+          I devised an Inverse Kinematics system so that the left-hand bone of the player's skeletal mesh would be attached to a custom
+          bone socket per weapon skeleton. As seen in the preview, by simply moving the position of said bone in the weapon skeleton, this will dynamically
+          adjust the skeletal mesh to better snap and position for each weapon animation set.
           </div>    
         </div>
-
-
-
-      </section>
-
-      <section class="reflection">
-        <h2>Reflection</h2>
-       
-
-
-        </section>
-
-        
+      </section>  
         </section>

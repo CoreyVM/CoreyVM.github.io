@@ -45,46 +45,46 @@
             talking to the NPCs when dialogue is needed, opening and closing cupboards and drawers.<br>
             
             Regarding the visuals, I decided to utilise a simple cell shader to boost the colours and visuals of the product; one of the requirements
-            was that this game could run on most machines and the web. So to accomplish this i decided to make as little GetComponent and Update calls 
+            was that this game could run on most machines and on the web. So to accomplish this, I decided to make as few GetComponent and Update calls 
             for the CPU.<br><br>
             Then, for the GPU, only low-polygon models and limited lighting were used to reduce the amount of draw calls. 
             Then, marking objects that don't move as static
             to aid in the occlusion culling process. Then lastly, for terrain that was outside, it was pointless to render entire buildings, so I decided
             to remove the faces from the back as if they were never going to be seen by the player, then we could save the VRAM from loading redundant vertices and polygons.
-
-
         </p>
       </section>
 
       <section class="reflection">
         <h2>Reflection</h2>
         <div class="ref-content">  
-        Upon reflection, I believe many things went well with the project and many areas in which I could have improved.
-        For starters taking in the lessons learnt from my inventroy system, I made sure to utilise a scalable and modular 
-        apporach to building all functinality within the game.<br>
-        However, as this project was under a strict timeframe per my final module during my Masters. This can be seen with the overall visuals and 
-        final implemetatnion of assets. <br><br>
+        Upon reflection, I believe the project went well in many ways and that I could have improved in many areas.
+        For starters, taking in the lessons learnt from my inventory system, I made sure to utilise a scalable and modular 
+        approach to building all functionality within the game.<br>
+        However, as this project was under a strict timeframe per my final module during my Master's. This can be seen with the overall visuals and 
+        final implementation of assets. <br><br>
 
-        For the user interface this was an area that upon retrospection was not handled to my standard of good practise, as for starters
-        the scale and positions of UI elemetns were not scaled correctly to all devices. Moreover, the overall resolution of the textures
-        could have been upscaled or remade to better suit the visuals and increase clarity on the final product.
+        For the user interface, this was an area that, upon retrospection, was not handled to my standard of good practice, as for starters
+        the scale and positions of UI elements were not scaled correctly to all devices. Moreover, the overall resolution of the textures
+        could have been upscaled or remade to suit the visuals better and increase clarity on the final product.
 
-        Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
-        to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
+        Additionally, for the wire puzzle, whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
+        to over complicate the visuals with high fidelity meshes I decided to stick with the final implantation.<br> <br>
         </div>
+
+
 
 
         <div class="ref-container">
         <div class="ref-content">
-        Additonally, for the wire puzzle whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
-        to over complkciate the visuals with high fidentliy meshes I decided to stick with the final implemtation.<br> <br>
+        Additionally, for the wire puzzle, whilst the logic works to my liking, this was not the intended final look, but due to time and not wanting 
+        to over complicate the visuals with high fidelity meshes I decided to stick with the final implementation.<br> <br>
         At first, I tinkered with a small algorithm that would detect the correct sequence of positions and light all of the appropriate switches
         and turn off the inactive switches. However, there were complications with scope creep and the various potential calculations that needed to be processed
         for every possible solution made by the player. <br><br>
         
         To fix this, I decided to hardcode the solution into the script and used a simple for loop to detect what switches are active and 
-        if they correspond to the actual solution to the puzzle. By choosing this implemtatino this simplified the process and made it so much more memory efficent, there were plans
-        to make the puzzle randomised with each playthwoght but for time limitation I decided to keep this original solution for all playthroughs.<br><br>
+        if they correspond to the actual solution to the puzzle. By choosing this implementation, this simplified the process and made it so much more memory efficient, there were plans
+        to make the puzzle randomised with each playthrough but for time limitation I decided to keep this original solution for all playthroughs.<br><br>
         </div>    
 
         <div class ="ref-image">    

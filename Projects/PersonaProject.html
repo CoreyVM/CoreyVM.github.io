@@ -11,8 +11,8 @@
       <section class="intro">
         <h2>Introduction</h2>
         <p>
-      As an avid fan of turn based games, I wanted to create my own turn based prototype and from playing Persona 5. I was fascinated
-      with it's combat system as it was fast paced and strategic with a great visual flair.
+      As an avid fan of turn-based games, I wanted to create my own turn-based prototype inspired by playing Persona 5. I was fascinated
+      with its combat system, as it was fast-paced and strategic with a great visual flair.
         </p>
       </section>
 
@@ -20,7 +20,7 @@
         <h2>System Functionality</h2>
         <div class="sys-description">
         <p>
-            The functinality of this sytem is as follows:
+            The functionality of this system is as follows:
             <ul>
                 <li>Basic Attacking (Melee Attack)</li>
                 <li>Using Magic</li>
@@ -35,35 +35,33 @@
        <div class="sysfunc-container">
 
          <div class="sysfunc-description">
-            For the combat system the player has access to attacking with their melee weapon, guarding (reducing incoming damage), and lastly using items from 
-            the players inventory. <br>
-            Based on each choice the player HUD will autmoatically change to represent what actions were possible. For example, when the 'Attack' button is processed
+            For the combat system, the player has access to attacking with their melee weapon, guarding (reducing incoming damage), and lastly using items from 
+            the player's inventory. <br>
+            Based on each choice, the player's HUD will automatically change to represent possible actions. For example, when the 'Attack' button is processed
             the UI will render all possible targets the player unit can attack. To better represent the target you are aiming for, 
-            the camera automatically moves to the highlighted character.        
+            the camera automatically moves to the highlighted character. 
         </div>    
-
             <div class ="sysfunc-image-2">    
             <img src="images/combatimage.png" alt="GetAmmoInInventory function" />
             </div>
-
         </div>
-
-
           <div class="sysfunc-container">
               <div class ="sysfunc-image">    
                   <img src="images/PersonaMagicUI.png" alt="GetAmmoInInventory function" />
               </div>
          <div class="sysfunc-description">
             One of the biggest challenge that i knew I had to face was creating the magic spell system. So the way
-            most traditonal turn based RPGs operate is by having each party member having their own skills and attributes
+            most traditional turn-based RPGs operate is by having each party member having their own skills and attributes
             that each member utilises in combat.<br>
-            As all enemies and party members all have the exact means of attacking and defending the apporach taken was to create a
-            master class for all character entities in the game world. Then for each type of enemy and party member, I inherited
-            from this master class to derive the core logic with virtual functions and overridable member varialbe structs for 
-            all of the infomration about their abilities such as  (Damage, Mana Cost, Sprite Icon, MagicType).<br><br>
+            As all enemies and party members all have the exact means of attacking and defending, the approach taken was to create a
+            master class for all character entities in the game world. Then, for each type of enemy and party member, I inherited
+            from this master class to derive the core logic with virtual functions and overridable member variable structs for 
+            all of the information about their abilities such as  (Damage, Mana Cost, Sprite Icon, MagicType).<br><br>
 
-            With all of this information loaded into the entities memory each turn I could then update the UI to quick reload
+            With all this information loaded into the entity's memory, each turn, I could then update the UI to quick reload
             only showing the spells that the specific character can use.
+
+
          </div>
     </div>
    
@@ -71,15 +69,14 @@
         <!--Weakness Section -->
         <div class="sysfunc-container">
         <div class="sysfunc-description">
-            As stated before inside of the master class all of the attributes for all possible combat particitpants are created.
-            So to replicate Personas combat system I had to incpoprate the Weakness Vunerability system. This features works as follows, if you attack
-            a characters weakness such as Fire with a Fire based attack. Then you will trigger their weakness and reward the attacker
-            with a One More (Additonal Turn in Combat).<br>
+            As stated before, inside the master class, all of the attributes for all possible combat participants are created.
+            So to replicate Personas' combat system, I had to incorporate the Weakness Vulnerability system. This feature works as follows: if you attack
+            a character's weakness, such as Fire with a Fire-based attack. Then you will trigger their weakness and reward the attacker
+            With a One More (Additional Turn in Combat).<br>
             <br>
-            When this is triggered the HUD will display to the player that they have earned another turn, essentially setting the turn order
-            in the order array back to the previous attacker. However, with this system you cannot exploit a single characters weakness twice in a single turn.
-            So in my my system you can only strike the enemy combatants once per turn, this is where the strategy comes from since you can still exploit
-            other NPCs weaknesses but your character must have a spell that can exploit the accompnuing NPC.
+            When this is triggered, the HUD will display to the player that they have earned another turn, essentially setting the turn order in the order array back to the previous attacker. However, with this system, you cannot exploit a single character's weakness twice in a single turn.
+            So in my system, you can only strike the enemy combatants once per turn, this is where the strategy comes from, since you can still exploit
+            other NPCs' weaknesses, but your character must have a spell that can exploit the accompanying NPC.
          </div>
         <div class ="sysfunc-image-2">    
             <img src="images/weakness.gif" alt="GetAmmoInInventory function" />
@@ -90,22 +87,24 @@
       <section class="reflection">
         <h2>Reflection</h2>
     <div class="ref-content">  
-        Regarding the project as a whole in regards to simply recreating the core logic of the combat system I was attemtping to recreate, was a sucess.
+        Regarding the project as a whole in regards to simply recreating the core logic of the combat system I was attempting to recreate, was a success.
         All of the main aspects of the combat system are present and mimic Personas own combat system. <br><br>
 
-        However, since this project was mostly just a means to recreate the logic I had taken less care into making the user interface
-        look as polished as the game I was mimicking. Additonally, regarding the artifical inteligence I created, their logic is simply non existent,
-        for the sake of prototyping these NPCs, would simply look at their current available moves. For example if they have enough mana to cast a spell,
-        and their main melee attack. Then using a random number generator they will exectute a random attack, then they will select a random 
+        However, since this project was mostly just a means to recreate the logic, I had taken less care in making the user interface
+        look as polished as the game I was mimicking. Additionally, regarding the artificial intelligence I created, its logic is simply non-existent,
+        for the sake of prototyping these NPCs, would simply look at their current available moves. For example, if they have enough mana to cast a spell,
+        and their main melee attack. Then, using a random number generator, they will execute a random attack, and then they will select a random 
         active party member on the player's team.<br><br>
 
-        If I were to revisit this project I woudl aim to create a Finite state machine to control the behaviour of the artigucla
-        intelligence, with this state machine I could at least add some complexity to the deciision making process. For exampole, if I 
-        were to have a diffuclty system if the AI is running on 'Easy Mode' the AI could have a sysetm where at least one turn where
-        they are able to eliminate a party meber from the player they would delibaretly avoid targeting that character to give the player a chance
-        to heal that member until being punished.
+        If I were to revisit this project, I would aim to create a Finite state machine to control the behaviour of the artificial
+        intelligence, with this state machine, I could at least add some complexity to the decision-making process. For example, if I 
+        were to have a difficulty system, if the AI is running on 'Easy Mode', the AI could have a system where at least one turn, where
+        they are able to eliminate a party member from the player; they would deliberately avoid targeting that character to give the player a chance
+        to heal that member until it is punished.
 
-        Moreover, the AI could have a system where if they found the exact attack that exploits a player character then they would 
-        tend to use that specific move to punish the player for not gurading or planning around their vunerabilites.   
+        Moreover, the AI could have a system where if they found the exact attack that exploits a player character, then they would 
+        tend to use that specific move to punish the player for not guarding or planning around their vulnerabilities.   
+
+
         </div>
       </section>
